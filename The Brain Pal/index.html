@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <title>The Brain Pal – Bridge Emotions to Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+
+  <style>
+    /* Hide body initially until auth is confirmed */
+    body {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>The Brain Pal</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#features">Features</a>
+      <a href="signin.html">Sign In / Signup</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Bridge Emotions to Solutions</h2>
+    <p>The Brain Pal is your AI-powered emotional wellness companion. It senses how you feel, helps you heal, and connects you with others — privately, safely, and intelligently.</p>
+    <a href="#features" class="cta-button">Explore Now</a>
+  </section>
+
+  <section class="features" id="features">
+    <a href="emotion.html" class="feature-card">
+      <h3>🧠 Emotion Detection</h3>
+      <p>Detect stress, sadness, or fatigue from facial cues using secure, real-time Emotion AI.</p>
+    </a>
+
+    <a href="cbt.html" class="feature-card">
+      <h3>💬 CBT Chatbot</h3>
+      <p>Get instant support with therapy-based coping methods powered by intelligent conversation flow.</p>
+    </a>
+
+    <a href="peer.html" class="feature-card">
+      <h3>🤝 Peer Circles</h3>
+      <p>Join safe, anonymous peer groups where students share and support one another.</p>
+    </a>
+
+    <a href="mood.html" class="feature-card">
+      <h3>🎯 Mood Quests</h3>
+      <p>Track your wellness through gamified tasks that help build healthy habits and emotional resilience.</p>
+    </a>
+  </section>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+
+    © 2025 The Brain Pal – Made with empathy & AI at National Hackathon
+  </footer>
+
+  <!-- Firebase Auth Check and Logout -->
+  <script type="module">
+    import { auth } from './firebase-config.js';
+    import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js';
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        // Not logged in → redirect
+        window.location.href = 'signin.html';
+      } else {
+        console.log("✅ Logged in as", user.email);
+        // Show body now user is authenticated
+        document.body.style.display = 'block';
+      }
+    });
+
+    window.logout = () => {
+      signOut(auth).then(() => {
+        alert("Logged out.");
+        window.location.href = 'signin.html';
+      }).catch((error) => {
+        console.error("Logout error:", error);
+      });
+    };
+  </script>
+</body>
+</html>

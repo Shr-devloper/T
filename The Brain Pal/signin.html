@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login</title>
+    <link rel="stylesheet" href="signup.css"> <!-- Your custom CSS -->
+   
+</head>
+
+<body>
+    <div class="main">
+        <!-- Hidden Checkbox for controlling the forms -->
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <!-- Sign Up Form -->
+        <div class="signup">
+            <form id="signup-form">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" id="username" placeholder="User name" required="">
+                <input type="email" id="email" placeholder="Email" required="">
+                <input type="password" id="password" placeholder="Password" required="">
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login">
+            <form id="login-form">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" id="login-email" placeholder="Email" required="">
+                <input type="password" id="login-password" placeholder="Password" required="">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+<script type="module" src="signup.js"></script> <!-- JavaScript for handling forms -->
+<script type="module" src="login.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+/The Brain Pal
+├── index.html           → Landing Page ✅ (done)
+├── emotion.html         → Emotion Detection Page 🌟 (starting now)
+├── cbt.html             → CBT Chatbot (next)
+├── peer.html            → Peer Circles Chat
+├── quests.html          → Mood Quest Tracker
+├── /assets
+│   └── (images, icons)
+├── /js
+│   └── emotion.js       → Face API detection script
+├── /models              → face-api.js models (emotion detection)
+├── style.css            → Shared CSS file

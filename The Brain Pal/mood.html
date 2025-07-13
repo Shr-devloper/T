@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainPal – Mood Quests</title>
+  <link rel="stylesheet" href="mood.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Choose Your Current Mood</h1>
+    <div class="grid">
+      <div class="card" onclick="goToQuest('sadness')">
+        😢<br />Sadness
+      </div>
+      <div class="card" onclick="goToQuest('anxiety')">
+        😟<br />Anxiety
+      </div>
+      <div class="card" onclick="goToQuest('anger')">
+        😠<br />Anger
+      </div>
+      <div class="card" onclick="goToQuest('numb')">
+        😶<br />Numbness
+      </div>
+      <div class="card" onclick="goToQuest('overthinking')">
+        🤯<br />Overthinking
+      </div>
+    </div>
+    <a class="back-btn" href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    function goToQuest(mood) {
+      window.location.href = `quest.html?mood=${mood}`;
+    }
+  </script>
+</body>
+</html>
